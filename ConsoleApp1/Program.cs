@@ -1,72 +1,20 @@
-﻿using System.Threading;
-
+﻿
 
 
 
 #region mediator-design-pattern
 
 /*
- * Mediator Pattern bir Behavioral Design Pattern’dir. 
- * Ve adı üstünde nesnelerin iletişiminde bir aracı istendiği durumlarda yardımcı olmaktadır.
- * Mediator Pattern ile nesnelerin iletişimi ortak bir noktadan sağlanmakta, nesnelerin birbirleriyle doğrudan iletişime girmesi yerine 
- * bir aracıyla iletişime girip haberleşmesini tasarımlamaktadır.
- * Mediator Pattern'de Nesneler iletişim kurmak istediği diğer nesnelerin referanslarını barındırmaz, doğrudan bağlantı kurmaz, 
- * aracıyı kullanarak tüm iletişimlerini bu aracı katman üzerinden sağlarlar.
+ * Nesneler arasındaki kaotik bağımlılıkları azaltmaktadır.
+ * Nesneler arasındaki iletişim aracı başka bir nesne üzerinden sağlanmaktadır.
+ * Loosely Coupled bir yapı sunmaktadır.
+ * Dezavantaj, mediator nesnesi belli bir süre sonra kompleks hale gelebilir.
  * 
- *
- *
+ * 
+ * 
  */
 
 
-public class Participant
-{
-    public ChatroomMediator ChatroomMediator { get; set; }
-    public string Name { get; }
-
-    public Participant(string name)
-    {
-        Name = name;
-    }
-    public void Send(string to, string message)
-    {
-        ChatroomMediator.Send(Name, to, message);
-    }
-    public void Receive(string from, string message)
-    {
-        Console.WriteLine("{0} to {1}: '{2}'", from, Name, message);
-    }
-}
-
-public interface IChatroomMediator
-{
-    public void Register(Participant participant);
-    public void Send(string from, string to, string message);
-}
-
-
-public class ChatroomMediator : IChatroomMediator
-{
-    private Dictionary<string, Participant> _participants = new Dictionary<string, Participant>();
-
-    public void Register(Participant participant)
-    {
-        if (!_participants.ContainsValue(participant))
-        {
-            _participants[participant.Name] = participant;
-        }
-
-        participant.ChatroomMediator = this;
-    }
-    public void Send(string from, string to, string message)
-    {
-        Participant participant = _participants[to];
-
-        if (participant != null)
-        {
-            participant.Receive(from, message);
-        }
-    }
-}
 
 #endregion
 
