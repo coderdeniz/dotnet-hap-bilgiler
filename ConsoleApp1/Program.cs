@@ -15,6 +15,73 @@
  */
 
 
+ConcreteMediator mediator = new ConcreteMediator();
+
+// Meslektaşları oluştur ve mediatöre kaydet
+Colleague colleague1 = new ConcreteColleague(mediator);
+Colleague colleague2 = new ConcreteColleague(mediator);
+
+mediator.RegisterColleague(colleague1);
+mediator.RegisterColleague(colleague2);
+
+// Bir mesaj gönder
+colleague1.Send("Merhaba, nasılsın?");
+
+
+public interface IMediator
+{
+    void RegisterColleague(Colleague colleague);
+    void SendMessage(string message, Colleague sender);
+}
+
+public abstract class Colleague
+{
+    protected IMediator mediator;
+
+    public Colleague(IMediator mediator)
+    {
+        this.mediator = mediator;
+    }
+
+    public abstract void Send(string message);
+    public abstract void ReceiveMessage(string message);
+}
+
+public class ConcreteColleague : Colleague
+{
+    public ConcreteColleague(IMediator mediator) : base(mediator) { }
+
+    public override void Send(string message)
+    {
+        Console.WriteLine("Meslektaş mesaj gönderdi: " + message);
+        mediator.SendMessage(message, this);
+    }
+
+    public override void ReceiveMessage(string message)
+    {
+        Console.WriteLine("Meslektaş mesaj aldı: " + message);
+    }
+}
+
+public class ConcreteMediator : IMediator
+{
+    private List<Colleague> colleagues = new List<Colleague>();
+
+    public void RegisterColleague(Colleague colleague)
+    {
+        colleagues.Add(colleague);
+    }
+
+    public void SendMessage(string message, Colleague sender)
+    {
+        foreach (var colleague in colleagues)
+        {
+            // Mesajı kendisi dışındaki tüm meslektaşlara iletmek
+            if (colleague != sender)
+                colleague.ReceiveMessage(message);
+        }
+    }
+}
 
 #endregion
 
