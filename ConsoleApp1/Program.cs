@@ -2,6 +2,36 @@
 
 
 
+#region yield-keyword
+
+// Yield anahtar kelimesi, .NET Core (ve .NET Framework) içinde kullanılan bir programlama özelliğidir. Bu özellik, bir koleksiyonu veya veri akışını tembel (lazy) bir şekilde üretmek için kullanılır. 
+
+// ShowNumbers();
+
+void ShowNumbers()
+{
+    var list = GetNumbers(); // toList demediğimiz için listeyi tutmuyor çağrıldığı yerde ihtiyaç halinde getiriyor.
+
+
+    foreach (var item in list)
+    {
+        Console.WriteLine(item);
+    }
+}
+
+
+IEnumerable<int> GetNumbers()
+{
+    for (int i = 0; i < 10; i++)
+    {
+        // liste dönüp bellekte tutmak yerine gerçek zamanlı ihtiyaç olduğunda üretir.
+        yield return i;
+    }
+}
+
+
+#endregion
+
 #region mediator-design-pattern
 
 /*
@@ -15,17 +45,17 @@
  */
 
 
-ConcreteMediator mediator = new ConcreteMediator();
+//ConcreteMediator mediator = new ConcreteMediator();
 
-// Meslektaşları oluştur ve mediatöre kaydet
-Colleague colleague1 = new ConcreteColleague(mediator);
-Colleague colleague2 = new ConcreteColleague(mediator);
+//// Meslektaşları oluştur ve mediatöre kaydet
+//Colleague colleague1 = new ConcreteColleague(mediator);
+//Colleague colleague2 = new ConcreteColleague(mediator);
 
-mediator.RegisterColleague(colleague1);
-mediator.RegisterColleague(colleague2);
+//mediator.RegisterColleague(colleague1);
+//mediator.RegisterColleague(colleague2);
 
-// Bir mesaj gönder
-colleague1.Send("Merhaba, nasılsın?");
+//// Bir mesaj gönder
+//colleague1.Send("Merhaba, nasılsın?");
 
 
 public interface IMediator
