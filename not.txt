@@ -1,0 +1,51 @@
+
+Ubiquitous Language: Yazýlým ekibi ile domain expert arasýndaki ortak iletiþim (tester'lar domain uzmanlarý yazýlýmcýlarýn ayný dili kullanmasý)
+
+-> her þeyin karþýlýðý olmasý gereklidir.
+-> ayrýntýlar gündemde olmalý
+-> kullanýlan dil iyileþtirilmeli
+-> örnekler somut olmalý
+-> amacý anlatmalýdýr
+
+
+Bounded Context: DDD tasarýmý kýsmýnda en merkezdeki prensiptir.
+
+-> bir domain subdomainler içerebilir ve içermelidir
+   . sipariþ, müþteri, kullanýcý, ürün, stok
+
+-> kendi içlerindeki tutarlýlýk ve bütünlük
+-> domain specific language
+-> bounded context'ler birbiri ile iletiþim kurabilir (sipariþ ve müþteri mesala)
+-> context mapping - bounded context'lerin kesiþim noktalarý ve iletiþim mimarisi
+
+
+Entity & Value Object, Aggregate Root
+
+-> Entity: kimliðe sahip objeler, baseEntity (id)
+-> ValueObject: kimliksiz, bir çok yerde kullanýlabilen dto'lardýr.
+-> Aggregate Root: transaction bütünlüðü, iliþkisel objeler, iþ kurallarý
+
+
+Services & Repository
+
+-> iþ kuralarrýnýn iþletilmesi ve çýktýlarý yönetmek için kullanýlan bölümlerdir
+-> Services: iþ kurallarýnýn ve doðrulama iþlemleri için kullanýlýr
+-> Repository: Bazý kurallar ile birlikte aggregate - veritabaný iletiþimi için kullanýlýrlar
+
+
+Layered Architecture
+
+-> Dört katmanlý mimari 
+	. Domain Layer
+	. Application Layer
+	. Infrastructure Layer
+	. Presentation Layer
+
+
+Refactoring, Clean & Readable Code
+
+-> Sadece anlýk görevi deðil, geneli iyileþtirmeyi hedefler
+
+
+
+
