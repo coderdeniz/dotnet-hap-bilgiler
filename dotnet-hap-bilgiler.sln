@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediatR-CQRS", "MediatR-CQR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrExample", "MediatR-CQRS\MediatrExample\MediatrExample.csproj", "{151A92D7-3727-4247-9C96-F066967553F6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Asenkron-Multithread", "Asenkron-Multithread", "{AD37C53B-568F-4722-AD61-0ECB1313F8B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,9 @@
+
+Task
+
+-> Ana thread'en ayrı olarak yeni thread oluşturuyor ve o thread içerisinde işlemlerini yapıyor bu yüzden wait ile beklemeliyiz.
+
+-> await kullanmak demek, yeni task oluşurken ana thread'i kitleme, aynı şekilde ana thread taskı bekler ama kitlemeden.
+
+
+  
