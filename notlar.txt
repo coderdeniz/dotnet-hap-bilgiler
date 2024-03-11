@@ -1,0 +1,9 @@
+CQRS
+
+-> Command Query Responsibility Segregation
+-> Command, veri deðiþimi
+-> Query, verilerin getirtilmesi
+-> Write Storage db, Read Storage db,
+
+
+

@@ -12,19 +12,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DomainDrivenDesign", "Domai
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EABD74C8-4214-4119-8A25-A49533566337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Domain", "DomainDrivenDesign\src\Order.Domain\Order.Domain.csproj", "{03843D29-7600-496E-BB89-2A51DCB7DD0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Domain", "DomainDrivenDesign\src\Order.Domain\Order.Domain.csproj", "{03843D29-7600-496E-BB89-2A51DCB7DD0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Application", "DomainDrivenDesign\src\Order.Application\Order.Application.csproj", "{1B5C96AF-3825-44EC-8473-0F402EE11E8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Application", "DomainDrivenDesign\src\Order.Application\Order.Application.csproj", "{1B5C96AF-3825-44EC-8473-0F402EE11E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Infrastructure", "DomainDrivenDesign\src\Order.Infrastructure\Order.Infrastructure.csproj", "{0C44D9D8-9641-40DD-96B1-85FF8592CBE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Infrastructure", "DomainDrivenDesign\src\Order.Infrastructure\Order.Infrastructure.csproj", "{0C44D9D8-9641-40DD-96B1-85FF8592CBE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.WebAPI", "DomainDrivenDesign\src\Order.WebAPI\Order.WebAPI.csproj", "{7AFE36C3-8F40-46F9-B384-FC3FD1FDF3F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.WebAPI", "DomainDrivenDesign\src\Order.WebAPI\Order.WebAPI.csproj", "{7AFE36C3-8F40-46F9-B384-FC3FD1FDF3F5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mediator", "Mediator", "{B50D2148-CD9D-4E16-BB8F-3FD026F12337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMediator.API", "Mediator\CustomMediator.API\CustomMediator.API.csproj", "{568DD252-A0C1-4592-AAAB-4A0EA1F296EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomMediator.API", "Mediator\CustomMediator.API\CustomMediator.API.csproj", "{568DD252-A0C1-4592-AAAB-4A0EA1F296EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomMediator.Library", "Mediator\CustomMediator.Library\CustomMediator.Library.csproj", "{C215C890-4C6F-4AAA-BB73-D72D5971B5B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomMediator.Library", "Mediator\CustomMediator.Library\CustomMediator.Library.csproj", "{C215C890-4C6F-4AAA-BB73-D72D5971B5B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MediatR-CQRS", "MediatR-CQRS", "{E4E32B43-3311-46C3-98B8-6FDB6BCA2801}"
+	ProjectSection(SolutionItems) = preProject
+		notlar.txt = notlar.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrExample", "MediatR-CQRS\MediatrExample\MediatrExample.csproj", "{151A92D7-3727-4247-9C96-F066967553F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,6 +67,10 @@ Global
 		{C215C890-4C6F-4AAA-BB73-D72D5971B5B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C215C890-4C6F-4AAA-BB73-D72D5971B5B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C215C890-4C6F-4AAA-BB73-D72D5971B5B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{151A92D7-3727-4247-9C96-F066967553F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{151A92D7-3727-4247-9C96-F066967553F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{151A92D7-3727-4247-9C96-F066967553F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{151A92D7-3727-4247-9C96-F066967553F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +83,7 @@ Global
 		{7AFE36C3-8F40-46F9-B384-FC3FD1FDF3F5} = {EABD74C8-4214-4119-8A25-A49533566337}
 		{568DD252-A0C1-4592-AAAB-4A0EA1F296EF} = {B50D2148-CD9D-4E16-BB8F-3FD026F12337}
 		{C215C890-4C6F-4AAA-BB73-D72D5971B5B1} = {B50D2148-CD9D-4E16-BB8F-3FD026F12337}
+		{151A92D7-3727-4247-9C96-F066967553F6} = {E4E32B43-3311-46C3-98B8-6FDB6BCA2801}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4526DF62-0DFF-45C1-BD24-626D6F0D3323}
